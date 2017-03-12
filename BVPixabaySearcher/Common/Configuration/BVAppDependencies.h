@@ -1,5 +1,5 @@
 //
-//  BVSearchImagesPresenter.h
+//  BVAppDependencies.h
 //  BVPixabaySearcher
 //
 //  Created by VBond on 3/12/17.
@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface BVSearchImagesPresenter : NSObject
-- (instancetype)initWithView:(UITableView *)view;
+@interface BVAppDependencies : NSObject
+- (BOOL)installRootViewControllerIntoWindow:(UIWindow *)window;
 @end

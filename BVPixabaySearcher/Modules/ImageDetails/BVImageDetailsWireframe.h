@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BVImageDetailsWireframe : NSObject
+@class BVImageDetailsViewController;
 
+@protocol BVImageDetailsWireframeProtocol <NSObject>
+- (void)dismissImageDetailsViewController;
+@end
+
+@interface BVImageDetailsWireframe : NSObject<BVImageDetailsWireframeProtocol>
+
+@property(nonatomic, strong) BVImageDetailsViewController *imageDetailsVC;
 @end

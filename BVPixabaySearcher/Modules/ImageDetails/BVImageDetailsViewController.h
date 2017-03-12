@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class BVImageDetailsWireframe;
+
 @interface BVImageDetailsViewController : UIViewController
 
+@property (weak, nonatomic) BVImageDetailsWireframe *navigation;
 @end

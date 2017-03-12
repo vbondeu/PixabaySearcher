@@ -8,6 +8,22 @@
 
 #import "BVSearchImagesPresenter.h"
 
+@interface BVSearchImagesPresenter ()
+@property(nonatomic, weak) UITableView *tableView;
+@end
+
 @implementation BVSearchImagesPresenter
+
+- (instancetype)initWithView:(UITableView *)view {
+    self = [super init];
+    if (self) {
+        _tableView = view;
+    }
+    return self;
+}
+
+- (void)updateImagesList {
+    [self.tableView reloadData];
+}
 
 @end

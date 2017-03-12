@@ -10,4 +10,8 @@
 
 @implementation BVImageDetailsWireframe
 
+- (void)dismissImageDetailsViewController {
+    
+}
+
 @end

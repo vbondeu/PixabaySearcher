@@ -23,6 +23,8 @@
 		1826F5041E7590EB0033F350 /* BVHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826F5031E7590EB0033F350 /* BVHttpClient.m */; };
 		1826F5071E7591090033F350 /* BVSearchResponseDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826F5061E7591090033F350 /* BVSearchResponseDescriptor.m */; };
 		1826F50A1E7591CF0033F350 /* BVImageSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826F5091E7591CF0033F350 /* BVImageSearch.m */; };
+		1826F50D1E75A0210033F350 /* BVAppDependencies.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826F50C1E75A0210033F350 /* BVAppDependencies.m */; };
+		1826F50F1E75A1FE0033F350 /* BVAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826F50E1E75A1FE0033F350 /* BVAppDelegateTests.m */; };
 		2EDA9E6223F4FC5369FD2D58 /* Pods_BVPixabaySearcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C8A892CF4D4284B4DC3C88 /* Pods_BVPixabaySearcherTests.framework */; };
 		A5A4B34201784739496D2902 /* Pods_BVPixabaySearcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922FE56BD5E0190F1D78C38F /* Pods_BVPixabaySearcher.framework */; };
 /* End PBXBuildFile section */
@@ -79,6 +81,9 @@
 		1826F5061E7591090033F350 /* BVSearchResponseDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BVSearchResponseDescriptor.m; path = Common/Network/BVSearchResponseDescriptor.m; sourceTree = "<group>"; };
 		1826F5081E7591CF0033F350 /* BVImageSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BVImageSearch.h; path = Common/Models/BVImageSearch.h; sourceTree = "<group>"; };
 		1826F5091E7591CF0033F350 /* BVImageSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BVImageSearch.m; path = Common/Models/BVImageSearch.m; sourceTree = "<group>"; };
+		1826F50B1E75A0210033F350 /* BVAppDependencies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BVAppDependencies.h; path = Common/Configuration/BVAppDependencies.h; sourceTree = "<group>"; };
+		1826F50C1E75A0210033F350 /* BVAppDependencies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BVAppDependencies.m; path = Common/Configuration/BVAppDependencies.m; sourceTree = "<group>"; };
+		1826F50E1E75A1FE0033F350 /* BVAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BVAppDelegateTests.m; sourceTree = "<group>"; };
 		2C0A11D60D0A5993CCD5D8F5 /* Pods-BVPixabaySearcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BVPixabaySearcher.release.xcconfig"; path = "Pods/Target Support Files/Pods-BVPixabaySearcher/Pods-BVPixabaySearcher.release.xcconfig"; sourceTree = "<group>"; };
 		75C8A892CF4D4284B4DC3C88 /* Pods_BVPixabaySearcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BVPixabaySearcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A984ED40E6C8645346E45D /* Pods-BVPixabaySearcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BVPixabaySearcher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BVPixabaySearcher/Pods-BVPixabaySearcher.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +164,7 @@
 			children = (
 				1826F4C31E758A9F0033F350 /* BVPixabaySearcherTests.m */,
 				1826F4C51E758A9F0033F350 /* Info.plist */,
+				1826F50E1E75A1FE0033F350 /* BVAppDelegateTests.m */,
 			);
 			path = BVPixabaySearcherTests;
 			sourceTree = "<group>";
@@ -186,11 +192,11 @@
 			children = (
 				1826F4A91E758A9F0033F350 /* AppDelegate.h */,
 				1826F4AA1E758A9F0033F350 /* AppDelegate.m */,
+				1826F4DE1E758C160033F350 /* Configuration */,
 				1826F5001E7590B00033F350 /* Network */,
 				1826F5011E7590B70033F350 /* Models */,
 				1826F4E81E758CC00033F350 /* Icons */,
 				1826F4E71E758CB40033F350 /* UI */,
-				1826F4DE1E758C160033F350 /* Configuration */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -199,6 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				1826F4FD1E758FF80033F350 /* BVConfiguration.h */,
+				1826F50B1E75A0210033F350 /* BVAppDependencies.h */,
+				1826F50C1E75A0210033F350 /* BVAppDependencies.m */,
 			);
 			name = Configuration;
 			sourceTree = "<group>";
@@ -587,6 +595,7 @@
 				1826F5071E7591090033F350 /* BVSearchResponseDescriptor.m in Sources */,
 				1826F4F31E758E9A0033F350 /* BVSearchImagesPresenter.m in Sources */,
 				1826F4FC1E758FAD0033F350 /* BVImageDetailsViewController.m in Sources */,
+				1826F50D1E75A0210033F350 /* BVAppDependencies.m in Sources */,
 				1826F4EB1E758D740033F350 /* BVSearchImagesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -595,6 +604,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1826F50F1E75A1FE0033F350 /* BVAppDelegateTests.m in Sources */,
 				1826F4C41E758A9F0033F350 /* BVPixabaySearcherTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

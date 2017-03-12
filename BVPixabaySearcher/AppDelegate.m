@@ -7,21 +7,14 @@
 //
 
 #import "AppDelegate.h"
-#import "BVSearchImagesViewController.h"
-
-@interface AppDelegate()
-
-@end
+#import "BVAppDependencies.h"
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-    UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-    navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
-    splitViewController.delegate = self;
-    return YES;
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.appDependencies = [BVAppDependencies new];
+    return [self.appDependencies installRootViewControllerIntoWindow:self.window];
 }
 
 @end

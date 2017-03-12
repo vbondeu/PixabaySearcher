@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class BVSearchImagesWireframe;
+@class BVImageDetailsWireframe;
+@class BVSearchImagesPresenter;
+
 @interface BVSearchImagesViewController : UITableViewController
 
+@property(nonatomic, strong) BVSearchImagesWireframe *navigation;
+@property(nonatomic, strong) BVSearchImagesPresenter *presenter;
 @end
