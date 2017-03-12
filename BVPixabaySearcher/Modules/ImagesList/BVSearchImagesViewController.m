@@ -7,15 +7,29 @@
 //
 
 #import "BVSearchImagesViewController.h"
+#import "BVImageDetailsViewController.h"
+#import "BVSearchImageCell.h"
+#import "BVHttpClient.h"
+
+static NSString *const kImageSearchCellId = @"ImageSearchCellId";
+static NSString *const kDefaultQueryWord = @"Rome";
 
 @interface BVSearchImagesViewController ()
-
+- (void)refreshData;
+- (void)refreshDataQuery:(NSString *)query;
 @end
 
 @implementation BVSearchImagesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [self configureView];
+    [self refreshData];
+}
+
+- (void)configureView {
+    
 }
 
 #pragma mark - Table view data source
@@ -36,6 +50,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //
+}
+
+#pragma mark - Networking
+
+- (void)refreshData {
+    [self refreshDataQuery:kDefaultQueryWord];
+}
+
+- (void)refreshDataQuery:(NSString *)query {
+    [[BVHttpClient API] getImagesSearchText:query
+                                    success:^(NSArray *images) {
+                                        NSLog(@"-= reponse log: %@", images);
+                                    } failure:^(NSError *error) {
+                                        
+                                    }];
 }
 
 @end

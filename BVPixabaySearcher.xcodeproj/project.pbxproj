@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		1826F4A81E758A9F0033F350 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826F4A71E758A9F0033F350 /* main.m */; };
 		1826F4AB1E758A9F0033F350 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826F4AA1E758A9F0033F350 /* AppDelegate.m */; };
-		1826F4AE1E758A9F0033F350 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826F4AD1E758A9F0033F350 /* MasterViewController.m */; };
-		1826F4B11E758A9F0033F350 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826F4B01E758A9F0033F350 /* DetailViewController.m */; };
 		1826F4B41E758A9F0033F350 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1826F4B21E758A9F0033F350 /* Main.storyboard */; };
 		1826F4B61E758A9F0033F350 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1826F4B51E758A9F0033F350 /* Assets.xcassets */; };
 		1826F4B91E758A9F0033F350 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1826F4B71E758A9F0033F350 /* LaunchScreen.storyboard */; };
@@ -22,6 +20,9 @@
 		1826F4F61E758EC40033F350 /* BVSearchImagesWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826F4F51E758EC40033F350 /* BVSearchImagesWireframe.m */; };
 		1826F4F91E758F7D0033F350 /* BVImageDetailsWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826F4F81E758F7D0033F350 /* BVImageDetailsWireframe.m */; };
 		1826F4FC1E758FAD0033F350 /* BVImageDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826F4FB1E758FAD0033F350 /* BVImageDetailsViewController.m */; };
+		1826F5041E7590EB0033F350 /* BVHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826F5031E7590EB0033F350 /* BVHttpClient.m */; };
+		1826F5071E7591090033F350 /* BVSearchResponseDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826F5061E7591090033F350 /* BVSearchResponseDescriptor.m */; };
+		1826F50A1E7591CF0033F350 /* BVImageSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1826F5091E7591CF0033F350 /* BVImageSearch.m */; };
 		2EDA9E6223F4FC5369FD2D58 /* Pods_BVPixabaySearcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C8A892CF4D4284B4DC3C88 /* Pods_BVPixabaySearcherTests.framework */; };
 		A5A4B34201784739496D2902 /* Pods_BVPixabaySearcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922FE56BD5E0190F1D78C38F /* Pods_BVPixabaySearcher.framework */; };
 /* End PBXBuildFile section */
@@ -49,10 +50,6 @@
 		1826F4A71E758A9F0033F350 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1826F4A91E758A9F0033F350 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1826F4AA1E758A9F0033F350 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1826F4AC1E758A9F0033F350 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		1826F4AD1E758A9F0033F350 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		1826F4AF1E758A9F0033F350 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		1826F4B01E758A9F0033F350 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		1826F4B31E758A9F0033F350 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1826F4B51E758A9F0033F350 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1826F4B81E758A9F0033F350 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,6 +73,12 @@
 		1826F4FA1E758FAD0033F350 /* BVImageDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BVImageDetailsViewController.h; path = Modules/ImageDetails/BVImageDetailsViewController.h; sourceTree = "<group>"; };
 		1826F4FB1E758FAD0033F350 /* BVImageDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BVImageDetailsViewController.m; path = Modules/ImageDetails/BVImageDetailsViewController.m; sourceTree = "<group>"; };
 		1826F4FD1E758FF80033F350 /* BVConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BVConfiguration.h; path = Common/BVConfiguration.h; sourceTree = "<group>"; };
+		1826F5021E7590EB0033F350 /* BVHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BVHttpClient.h; path = Common/Network/BVHttpClient.h; sourceTree = "<group>"; };
+		1826F5031E7590EB0033F350 /* BVHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BVHttpClient.m; path = Common/Network/BVHttpClient.m; sourceTree = "<group>"; };
+		1826F5051E7591090033F350 /* BVSearchResponseDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BVSearchResponseDescriptor.h; path = Common/Network/BVSearchResponseDescriptor.h; sourceTree = "<group>"; };
+		1826F5061E7591090033F350 /* BVSearchResponseDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BVSearchResponseDescriptor.m; path = Common/Network/BVSearchResponseDescriptor.m; sourceTree = "<group>"; };
+		1826F5081E7591CF0033F350 /* BVImageSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BVImageSearch.h; path = Common/Models/BVImageSearch.h; sourceTree = "<group>"; };
+		1826F5091E7591CF0033F350 /* BVImageSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BVImageSearch.m; path = Common/Models/BVImageSearch.m; sourceTree = "<group>"; };
 		2C0A11D60D0A5993CCD5D8F5 /* Pods-BVPixabaySearcher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BVPixabaySearcher.release.xcconfig"; path = "Pods/Target Support Files/Pods-BVPixabaySearcher/Pods-BVPixabaySearcher.release.xcconfig"; sourceTree = "<group>"; };
 		75C8A892CF4D4284B4DC3C88 /* Pods_BVPixabaySearcherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BVPixabaySearcherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A984ED40E6C8645346E45D /* Pods-BVPixabaySearcher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BVPixabaySearcher.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BVPixabaySearcher/Pods-BVPixabaySearcher.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,12 +138,8 @@
 		1826F4A51E758A9F0033F350 /* BVPixabaySearcher */ = {
 			isa = PBXGroup;
 			children = (
-				1826F4DD1E758C100033F350 /* Common */,
 				1826F4DC1E758C050033F350 /* Modules */,
-				1826F4AC1E758A9F0033F350 /* MasterViewController.h */,
-				1826F4AD1E758A9F0033F350 /* MasterViewController.m */,
-				1826F4AF1E758A9F0033F350 /* DetailViewController.h */,
-				1826F4B01E758A9F0033F350 /* DetailViewController.m */,
+				1826F4DD1E758C100033F350 /* Common */,
 				1826F4BA1E758A9F0033F350 /* Info.plist */,
 				1826F4A61E758A9F0033F350 /* Supporting Files */,
 			);
@@ -187,6 +186,8 @@
 			children = (
 				1826F4A91E758A9F0033F350 /* AppDelegate.h */,
 				1826F4AA1E758A9F0033F350 /* AppDelegate.m */,
+				1826F5001E7590B00033F350 /* Network */,
+				1826F5011E7590B70033F350 /* Models */,
 				1826F4E81E758CC00033F350 /* Icons */,
 				1826F4E71E758CB40033F350 /* UI */,
 				1826F4DE1E758C160033F350 /* Configuration */,
@@ -299,6 +300,26 @@
 				1826F4F21E758E9A0033F350 /* BVSearchImagesPresenter.m */,
 			);
 			name = Presenter;
+			sourceTree = "<group>";
+		};
+		1826F5001E7590B00033F350 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1826F5021E7590EB0033F350 /* BVHttpClient.h */,
+				1826F5031E7590EB0033F350 /* BVHttpClient.m */,
+				1826F5051E7591090033F350 /* BVSearchResponseDescriptor.h */,
+				1826F5061E7591090033F350 /* BVSearchResponseDescriptor.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		1826F5011E7590B70033F350 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1826F5081E7591CF0033F350 /* BVImageSearch.h */,
+				1826F5091E7591CF0033F350 /* BVImageSearch.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		391B2879ED61FFE00D0A42D5 /* Pods */ = {
@@ -557,14 +578,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1826F4AB1E758A9F0033F350 /* AppDelegate.m in Sources */,
+				1826F5041E7590EB0033F350 /* BVHttpClient.m in Sources */,
+				1826F50A1E7591CF0033F350 /* BVImageSearch.m in Sources */,
 				1826F4F01E758E580033F350 /* BVSearchImageCell.m in Sources */,
 				1826F4F91E758F7D0033F350 /* BVImageDetailsWireframe.m in Sources */,
 				1826F4F61E758EC40033F350 /* BVSearchImagesWireframe.m in Sources */,
-				1826F4AE1E758A9F0033F350 /* MasterViewController.m in Sources */,
 				1826F4A81E758A9F0033F350 /* main.m in Sources */,
+				1826F5071E7591090033F350 /* BVSearchResponseDescriptor.m in Sources */,
 				1826F4F31E758E9A0033F350 /* BVSearchImagesPresenter.m in Sources */,
 				1826F4FC1E758FAD0033F350 /* BVImageDetailsViewController.m in Sources */,
-				1826F4B11E758A9F0033F350 /* DetailViewController.m in Sources */,
 				1826F4EB1E758D740033F350 /* BVSearchImagesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
