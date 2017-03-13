@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class BVImageSearch;
+
+@protocol BVImageDetailsViewProtocol <NSObject>
+- (void)reloadEntries;
+- (void)showImageInfo:(BVImageSearch *)searchImage;
+@end
+
 @class BVImageDetailsWireframe;
 
-@interface BVImageDetailsViewController : UIViewController
+@interface BVImageDetailsViewController : UIViewController<BVImageDetailsViewProtocol>
 
 @property (weak, nonatomic) BVImageDetailsWireframe *navigation;
 @end

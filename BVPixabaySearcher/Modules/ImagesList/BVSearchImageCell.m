@@ -7,18 +7,30 @@
 //
 
 #import "BVSearchImageCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "BVImageSearch.h"
+
+@interface BVSearchImageCell()
+
+@property (strong, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UILabel *tagsLabel;
+@end
 
 @implementation BVSearchImageCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:NO animated:NO];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)setImageSearch:(BVImageSearch *)imageSearch {
+    self.userNameLabel.text = imageSearch.user;
+    self.tagsLabel.text = imageSearch.tags;
+    
+    NSURL *url = [NSURL URLWithString:imageSearch.webformatURL];
+    [self.imageView sd_setImageWithURL:url
+                      placeholderImage:[UIImage imageNamed:@"ImagePlaceholder"]];
+    [self layoutIfNeeded];
 }
 
 @end

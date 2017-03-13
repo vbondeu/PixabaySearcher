@@ -9,6 +9,7 @@
 #import "BVAppDependencies.h"
 #import "BVSearchImagesWireframe.h"
 #import "BVImageDetailsWireframe.h"
+#import "BVSearchImagesInteractor.h"
 #import "BVSearchImagesPresenter.h"
 #import "BVSearchImagesViewController.h"
 
@@ -31,7 +32,8 @@
     self.searchImagesWireframe = [BVSearchImagesWireframe new];
     self.searchImagesWireframe.imageDetailsWireframe = [BVImageDetailsWireframe new];
     
-    BVSearchImagesPresenter *searchPresenter = [[BVSearchImagesPresenter alloc] initWithView:self.searchImagesWireframe.searchImagesVC.tableView];
+    BVSearchImagesPresenter *searchPresenter = [[BVSearchImagesPresenter alloc] initWithView:self.searchImagesWireframe.searchImagesVC];
+    searchPresenter.interactor = [[BVSearchImagesInteractor alloc] initWithPresenter:searchPresenter];
     self.searchImagesWireframe.searchImagesVC.presenter = searchPresenter;
 }
 

@@ -9,6 +9,19 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface BVSearchImagesPresenter : NSObject
-- (instancetype)initWithView:(UITableView *)view;
+@class BVImageSearch;
+@class BVSearchImagesInteractor;
+@protocol BVSearchImagesProtocol;
+
+@protocol BVSearchImagesPresenterProtocol <NSObject>
+- (void)foundImageItems:(NSArray<BVImageSearch *> *)images;
+- (void)updateViewQuery:(NSString *)searchString;
+- (void)errorImageItems;
+@end
+
+@interface BVSearchImagesPresenter : NSObject<BVSearchImagesPresenterProtocol>
+
+@property(nonatomic, strong) BVSearchImagesInteractor *interactor;
+
+- (instancetype)initWithView:(id<BVSearchImagesProtocol>)interface;
 @end

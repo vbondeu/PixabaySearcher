@@ -16,5 +16,5 @@
 
 @interface BVImageDetailsWireframe : NSObject<BVImageDetailsWireframeProtocol>
 
-@property(nonatomic, strong) BVImageDetailsViewController *imageDetailsVC;
+@property(nonatomic, weak) BVImageDetailsViewController *imageDetailsVC;
 @end

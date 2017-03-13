@@ -10,10 +10,17 @@
 
 @class BVSearchImagesWireframe;
 @class BVImageDetailsWireframe;
-@class BVSearchImagesPresenter;
+@class BVImageSearch;
+@protocol BVSearchImagesPresenterProtocol;
 
-@interface BVSearchImagesViewController : UITableViewController
+@protocol BVSearchImagesProtocol <NSObject>
+- (void)reloadEntries;
+- (void)showDataImages:(NSArray<BVImageSearch *> *)images;
+- (void)showConnectionError;
+@end
+
+@interface BVSearchImagesViewController : UITableViewController<BVSearchImagesProtocol>
 
 @property(nonatomic, strong) BVSearchImagesWireframe *navigation;
-@property(nonatomic, strong) BVSearchImagesPresenter *presenter;
+@property(nonatomic, strong) id<BVSearchImagesPresenterProtocol> presenter;
 @end

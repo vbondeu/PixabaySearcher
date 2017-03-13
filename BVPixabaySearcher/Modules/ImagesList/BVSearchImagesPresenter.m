@@ -7,23 +7,37 @@
 //
 
 #import "BVSearchImagesPresenter.h"
+#import "BVSearchImagesViewController.h"
+#import "BVSearchImagesInteractor.h"
 
 @interface BVSearchImagesPresenter ()
-@property(nonatomic, weak) UITableView *tableView;
+@property(nonatomic, weak) id<BVSearchImagesProtocol> interface;
 @end
 
 @implementation BVSearchImagesPresenter
 
-- (instancetype)initWithView:(UITableView *)view {
+- (instancetype)initWithView:(id<BVSearchImagesProtocol>)interface {
     self = [super init];
     if (self) {
-        _tableView = view;
+        _interface = interface;
     }
     return self;
 }
 
+- (void)updateViewQuery:(NSString *)searchString {
+    [self.interactor findImageItems:searchString];
+}
+
 - (void)updateImagesList {
-    [self.tableView reloadData];
+    [self.interface reloadEntries];
+}
+
+- (void)foundImageItems:(NSArray<BVImageSearch *> *)images {
+    [self.interface showDataImages:images];
+}
+
+- (void)errorImageItems {
+    [self.interface showConnectionError];
 }
 
 @end

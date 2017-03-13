@@ -5,6 +5,7 @@ use_frameworks!
 
 target ‘BVPixabaySearcher’ do
 	pod 'RestKit', '~> 0.25.0'
+    pod 'SDWebImage', '~>3.8'
 	pod 'MBProgressHUD', '~> 0.8'
 	pod 'SVPullToRefresh', '~> 0.4.1'
 end

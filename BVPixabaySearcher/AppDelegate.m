@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import "BVAppDependencies.h"
 
+@interface AppDelegate()
+@property (nonatomic, strong, readwrite) BVAppDependencies *appDependencies;
+@end
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

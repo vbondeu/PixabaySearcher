@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '849AE0AFE0E7D38C10A1FC1D'
+               BlueprintIdentifier = 'B9E2D1FCB789E56892A53C06'
                BlueprintName = 'ISO8601DateFormatterValueTransformer'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'ISO8601DateFormatterValueTransformer.framework'>

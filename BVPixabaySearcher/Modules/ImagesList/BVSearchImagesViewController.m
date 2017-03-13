@@ -8,12 +8,15 @@
 
 #import "BVSearchImagesViewController.h"
 #import "BVImageDetailsViewController.h"
+#import "BVSearchImagesWireframe.h"
+#import "BVImageDetailsWireframe.h"
+#import "BVSearchImagesPresenter.h"
 #import "BVSearchImageCell.h"
 #import "BVHttpClient.h"
 #import "BVImageSearch.h"
 
 static NSString *const kImageSearchCellId = @"ImageSearchCellId";
-static NSString *const kDefaultQueryWord = @"Rome";
+static NSString *const kDefaultQueryWord = @"apples";
 
 @interface BVSearchImagesViewController ()<UISearchBarDelegate>
 
@@ -23,7 +26,6 @@ static NSString *const kDefaultQueryWord = @"Rome";
 - (void)configureView;
 - (void)setupSearchBar;
 - (void)refreshData;
-- (void)refreshDataQuery:(NSString *)query;
 @end
 
 @implementation BVSearchImagesViewController
@@ -60,39 +62,66 @@ static NSString *const kDefaultQueryWord = @"Rome";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BVSearchImageCell *cell = [tableView dequeueReusableCellWithIdentifier:kImageSearchCellId forIndexPath:indexPath];
+    BVImageSearch *imageSearch = self.imagesSearch[indexPath.row];
+    cell.imageSearch = imageSearch;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    BVImageSearch *image = self.imagesSearch[indexPath.row];
+    BVImageSearch *imageInfo = self.imagesSearch[indexPath.row];
+    [self.navigation presentImageDetailsViewController];
+    [self.navigation.imageDetailsWireframe.imageDetailsVC showImageInfo:imageInfo];
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self.searchbar resignFirstResponder];
 }
 
+
 #pragma mark - Search bar delegate
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [_searchbar resignFirstResponder];
-    [self refreshDataQuery:_searchbar.text];
+    [self.presenter updateViewQuery:_searchbar.text];
 }
 
 #pragma mark - Networking
 
 - (void)refreshData {
-    [self refreshDataQuery:kDefaultQueryWord];
+    [self.presenter updateViewQuery:kDefaultQueryWord];
 }
 
-- (void)refreshDataQuery:(NSString *)query {
-    [[BVHttpClient API] getImagesSearchText:query
-                                    success:^(NSArray *images) {
-                                        self.imagesSearch = [NSMutableArray arrayWithArray:images];
-                                        [self.tableView reloadData];
-                                    } failure:^(NSError *error) {
-                                        
-                                    }];
+#pragma mark - BVSearchImagesProtocol
+
+- (void)reloadEntries {
+    [self.tableView reloadData];
+}
+
+- (void)showDataImages:(NSArray<BVImageSearch *> *)images {
+    self.imagesSearch = [[NSMutableArray alloc] initWithArray:images];
+    [self reloadEntries];
+}
+
+#pragma mark - Error Alert
+
+- (void)showConnectionError {
+    NSString *title = @"Connection error";
+
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:nil
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction *action) {
+                                                     }];
+    [alertController addAction:okAction];
+    
+    [self presentViewController:alertController
+                       animated:YES
+                     completion:^{
+                     }];
 }
 
 @end

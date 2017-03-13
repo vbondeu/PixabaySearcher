@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '99E7895D576CF65E99EE3650'
+               BlueprintIdentifier = 'E8D650E763D51C4B52904D3E'
                BlueprintName = 'Pods-BVPixabaySearcher'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_BVPixabaySearcher.framework'>

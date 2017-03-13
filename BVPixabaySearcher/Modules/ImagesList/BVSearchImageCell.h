@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+
+@class BVImageSearch;
 
 @interface BVSearchImageCell : UITableViewCell
-
+@property(nonatomic, strong) BVImageSearch *imageSearch;
 @end

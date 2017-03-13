@@ -12,7 +12,7 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, strong) BVAppDependencies *appDependencies;
+@property (nonatomic, strong) UIWindow *window;
+@property (nonatomic, strong, readonly) BVAppDependencies *appDependencies;
 @end
 

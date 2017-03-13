@@ -7,11 +7,12 @@
 //
 
 #import "BVImageDetailsWireframe.h"
+#import "BVImageDetailsViewController.h"
 
 @implementation BVImageDetailsWireframe
 
 - (void)dismissImageDetailsViewController {
-    
+    [self.imageDetailsVC dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

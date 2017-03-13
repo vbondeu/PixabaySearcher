@@ -27,6 +27,9 @@ PODS:
   - RestKit/Support (0.25.0):
     - TransitionKit (~> 2.1.0)
   - RKValueTransformers (1.1.3)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
   - SOCKit (1.1)
   - SVPullToRefresh (0.4.1)
   - TransitionKit (2.1.1)
@@ -37,6 +40,7 @@ DEPENDENCIES:
   - OCHamcrest (~> 3.0.0)
   - OCMockito (~> 1.1.0)
   - RestKit (~> 0.25.0)
+  - SDWebImage (~> 3.8)
   - SVPullToRefresh (~> 0.4.1)
 
 SPEC CHECKSUMS:
@@ -48,6 +52,7 @@ SPEC CHECKSUMS:
   OCMockito: 9f1dd30cb7dde32c5ff2dffc5fc4df996d7bdefc
   RestKit: a4fcaf3d4bb2c204679856a46d596160bf208095
   RKValueTransformers: e5ed67e3811229b616fe01bddeeafe3bb337b1b9
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SOCKit: c7376ac262bea9115b8f749358f762522a47d392
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
   TransitionKit: 3a14b6acc7cf2d1dd3e454e24dbad1cfab9a1ef1
