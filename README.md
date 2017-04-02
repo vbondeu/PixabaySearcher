@@ -1,5 +1,6 @@
 
 ===================
+
 Getting Started
 
  - Version of cocoapods 0.39.0
@@ -7,10 +8,14 @@ Getting Started
  - Details screen has zooming mode
 
 ===================
+
 Installation
-  pod install
+
+     pod install
 
 
 ===================
+
 Contacts
-  vbond.eu@gmail.com
+
+     vbond.eu@gmail.com
