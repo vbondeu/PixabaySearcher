@@ -1,4 +1,4 @@
-Vladimir Bondarev
+
 ===================
 Getting Started
 
@@ -11,4 +11,6 @@ Installation
   pod install
 
 
-
+===================
+Contacts
+  vbond.eu@gmail.com
